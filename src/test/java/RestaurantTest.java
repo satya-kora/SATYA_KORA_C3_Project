@@ -63,5 +63,15 @@ class RestaurantTest {
     
         assertThrows(itemNotFoundException.class,()->restaurant.removeFromMenu("French Veggies"));
     }
+
+    @Test
+    public void checking_total_cost_is_the_sum_of_the_prices_of_items_selected()  {
+        
+        List<String> items=new ArrayList<>();
+        items.add("Vegetable lasagne");
+        items.add("Sweet corn soup");
+        items.add("Vegetable lasagne");
+        assertEquals(657,restaurant.getTotal(items));
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
